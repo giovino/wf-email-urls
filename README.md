@@ -41,7 +41,8 @@ $ wget https://raw.githubusercontent.com/giovino/wf-email-urls/master/wf-email-u
 it appropriately.
 
  ```
-# Prevent some email addresses from being processed to WF
+# Process spam emails to have the urls in the message body submitted
+# to whiteface
 :0 c
 * ^X-Spam-Level: \*\*\*\*\*
 | /path/to/venv/bin/python2.7 /path/to/whiteface-submit.py
