@@ -32,12 +32,14 @@ project.
 1. Install [py-cgmail](https://github.com/csirtgadgets/py-cgmail) and [py-whitefacesdk](https://github.com/csirtgadgets/py-whitefacesdk)
 within the virtual environment.
 1. Download the wf-email-urls.py script
+
  ```bash
 $ wget https://raw.githubusercontent.com/giovino/wf-email-urls/master/wf-email-urls.py
  ```
 1. Edit wf-email-urls.py to fill in (WHITEFACE_USER, WHITEFACE_FEED, WHITEFACE_TOKEN)
 1. Leverage procmail to feed spam email through standard in. This is just an example, you will want to customize
 it appropriately.
+
  ```
 # Prevent some email addresses from being processed to WF
 :0 c
