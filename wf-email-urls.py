@@ -87,9 +87,14 @@ def main():
 
                 comment = json.dumps(adata)
                 c = Client(token=WHITEFACE_TOKEN)
-                o = Indicator(c, url, tags='uce', comment=comment)
-                ret = o.new(user=WHITEFACE_USER, feed=WHITEFACE_FEED)
-                logger.info('logged to whiteface %s ' % ret['indicator']['location'])
+                i = Indicator(c, {
+                    'feed': WHITEFACE_FEED,
+                    'user': WHITEFACE_USER,
+                    'indicator': url,
+                    'tags': 'uce,uce-urls',
+                    'comment': comment
+                }).submit()
+                logger.info('logged to whiteface %s ' % i['indicator']['location'])
 
 if __name__ == "__main__":
     main()
