@@ -7,7 +7,7 @@ import textwrap
 import json
 
 from whitefacesdk.client import Client
-from whitefacesdk.observable import Observable
+from whitefacesdk.indicator import Indicator
 from argparse import ArgumentParser
 from argparse import RawDescriptionHelpFormatter
 
@@ -87,9 +87,9 @@ def main():
 
                 comment = json.dumps(adata)
                 c = Client(token=WHITEFACE_TOKEN)
-                o = Observable(c, url, tags='uce', comment=comment)
+                o = Indicator(c, url, tags='uce', comment=comment)
                 ret = o.new(user=WHITEFACE_USER, feed=WHITEFACE_FEED)
-                logger.info('logged to whiteface %s ' % ret['observable']['location'])
+                logger.info('logged to whiteface %s ' % ret['indicator']['location'])
 
 if __name__ == "__main__":
     main()
